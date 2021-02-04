@@ -1,0 +1,60 @@
+GET sun_invbox_day
+
+GET sun_invbox_day/_search
+{
+  "query": {
+    "range": {
+      "dtime": {
+        "gte": "2021-02-01",
+        "lte": "2021-02-01"
+      }
+    }
+  }
+}
+
+GET sun_invbox_day/_search
+{
+  "size": 0, 
+  "query": {
+    "range": {
+      "dtime": {
+        "gte": "2021-02-01",
+        "lte": "2021-02-01"
+      }
+    }
+  },
+  "aggs": {
+    "group_by_company": {
+      "terms": {
+        "field": "company_name"
+      }
+    }
+  }
+}
+
+GET sun_invbox_day/_search
+{
+  "size": 0, 
+  "query": {
+    "range": {
+      "dtime": {
+        "gte": "2021-02-01",
+        "lte": "2021-02-01"
+      }
+    }
+  },
+  "aggs": {
+    "group_by_company": {
+      "terms": {
+        "field": "company_name"
+      },
+      "aggs": {
+        "group_by_st_name": {
+          "terms": {
+            "field": "st_name"
+          }
+        }
+      }
+    }
+  }
+}
