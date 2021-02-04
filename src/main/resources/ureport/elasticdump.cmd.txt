@@ -1,0 +1,3 @@
+elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.mapping.json --type=mapping
+
+elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.data.json --type=data
