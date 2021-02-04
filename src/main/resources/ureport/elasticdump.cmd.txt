@@ -1,3 +1,9 @@
 elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.mapping.json --type=mapping
 
-elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.data.json --type=data
+elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.data.json --type=data --searchBody="{\"query\":{\"bool\":{\"must\":[{\"range\":{\"dtime\":{\"gte\":\"2021-02-01\",\"lte\":\"2021-02-01\"}}},{\"term\":{\"companyid\":\"188\"}}]}}}"
+
+
+
+elasticdump --input=/Users/xuzewei/Downloads/data/sun_invbox_day.mapping.json --output=http://127.0.0.1:9200/sun_invbox_day --type=mapping
+
+elasticdump --input=/Users/xuzewei/Downloads/data/sun_invbox_day.data.json --output=http://127.0.0.1:9200/sun_invbox_day --type=data
