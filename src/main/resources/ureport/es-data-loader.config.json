@@ -1,14 +1,12 @@
 {
     "datasources": {
         "ds1": {
-            "indices": [
-                "sun_invbox_day"
-            ],
             "datasets": {
                 "dataset1": {
-                    "path": "aggregations.sterms#__group_by__company_name.buckets"
+                    "path": "aggregations.__group_by__company_name.buckets"
                 }
             },
+            "url": "http://127.0.01:9200/sun_invbox_day/_search",
             "search": {
                 "size": 0,
                 "query": {
