@@ -1,0 +1,142 @@
+{
+    "datasources": {
+        "ds1": {
+            "indices": [
+                "sun_invbox_day"
+            ],
+            "datasets": {
+                "dataset1": {
+                    "path": "aggregations.sterms#__group_by__company_name.buckets"
+                }
+            },
+            "search": {
+                "size": 0,
+                "query": {
+                    "bool": {
+                        "must": [
+                            {
+                                "range": {
+                                    "dtime": {
+                                        "gte": "2021-02-01",
+                                        "lte": "2021-02-01"
+                                    }
+                                }
+                            },
+                            {
+                                "term": {
+                                    "companyid": "188"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "aggs": {
+                    "__group_by__company_name": {
+                        "terms": {
+                            "field": "company_name"
+                        },
+                        "aggs": {
+                            "inst_kw": {
+                                "sum": {
+                                    "field": "inst_kw"
+                                }
+                            },
+                            "real_kwh": {
+                                "sum": {
+                                    "field": "real_kwh"
+                                }
+                            },
+                            "real_hours": {
+                                "avg": {
+                                    "field": "real_hours"
+                                }
+                            },
+                            "rad_chk": {
+                                "avg": {
+                                    "field": "rad_chk"
+                                }
+                            },
+                            "__group_by__st_name": {
+                                "terms": {
+                                    "field": "st_name"
+                                },
+                                "aggs": {
+                                    "inst_kw": {
+                                        "sum": {
+                                            "field": "inst_kw"
+                                        }
+                                    },
+                                    "real_kwh": {
+                                        "sum": {
+                                            "field": "real_kwh"
+                                        }
+                                    },
+                                    "real_hours": {
+                                        "avg": {
+                                            "field": "real_hours"
+                                        }
+                                    },
+                                    "rad_chk": {
+                                        "avg": {
+                                            "field": "rad_chk"
+                                        }
+                                    },
+                                    "max_p": {
+                                        "sum": {
+                                            "field": "max_p"
+                                        }
+                                    },
+                                    "pr": {
+                                        "avg": {
+                                            "field": "pr"
+                                        }
+                                    },
+                                    "clean_mark": {
+                                        "avg": {
+                                            "field": "clean_mark"
+                                        }
+                                    },
+                                    "we": {
+                                        "sum": {
+                                            "field": "we"
+                                        }
+                                    },
+                                    "dust_we": {
+                                        "sum": {
+                                            "field": "dust_we"
+                                        }
+                                    },
+                                    "shade_we": {
+                                        "sum": {
+                                            "field": "shade_we"
+                                        }
+                                    },
+                                    "fail_we": {
+                                        "sum": {
+                                            "field": "fail_we"
+                                        }
+                                    },
+                                    "restrict_we": {
+                                        "sum": {
+                                            "field": "restrict_we"
+                                        }
+                                    },
+                                    "repair_we": {
+                                        "sum": {
+                                            "field": "repair_we"
+                                        }
+                                    },
+                                    "other_we": {
+                                        "sum": {
+                                            "field": "other_we"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

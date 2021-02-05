@@ -1,5 +1,7 @@
 package com.github.microprograms.ureport_springboot_demo;
 
+import java.io.InputStream;
+
 import com.bstek.ureport.console.UReportServlet;
 
 import org.springframework.boot.SpringApplication;
@@ -22,8 +24,13 @@ public class UreportDemoApplication {
 	}
 
 	@Bean
-	public UreportDataLoader ureportDataLoader() {
-		return new UreportDataLoader();
+	public EsDataLoader esDataLoader() {
+		try (InputStream configInputStream = this.getClass().getClassLoader()
+				.getResourceAsStream("ureport/es-data-loader.config.json")) {
+			return new EsDataLoader(configInputStream);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 }
