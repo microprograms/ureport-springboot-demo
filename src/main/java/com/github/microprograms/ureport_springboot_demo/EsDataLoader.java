@@ -15,9 +15,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -55,12 +53,12 @@ public class EsDataLoader {
 
         // List<Map<String, String>> list = new ArrayList<>();
         // for (int i = 0; i < jsonArray.size(); i++) {
-        // JSONObject x = jsonArray.getJSONObject(i);
-        // Map<String, String> map = new HashMap<>();
-        // for (String key : x.keySet()) {
-        // map.put(key, x.getString(key));
-        // }
-        // list.add(map);
+        //     JSONObject x = jsonArray.getJSONObject(i);
+        //     Map<String, String> map = new HashMap<>();
+        //     for (String key : x.keySet()) {
+        //         map.put(key, x.getString(key));
+        //     }
+        //     list.add(map);
         // }
 
         // return list;

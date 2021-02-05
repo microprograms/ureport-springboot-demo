@@ -3,7 +3,7 @@
         "ds1": {
             "datasets": {
                 "dataset1": {
-                    "path": "aggregations.__group_by__company_name.buckets"
+                    "path": "aggregations.group_by_company_name.buckets"
                 }
             },
             "url": "http://127.0.01:9200/sun_invbox_day/_search",
@@ -29,7 +29,7 @@
                     }
                 },
                 "aggs": {
-                    "__group_by__company_name": {
+                    "group_by_company_name": {
                         "terms": {
                             "field": "company_name"
                         },
@@ -54,7 +54,7 @@
                                     "field": "rad_chk"
                                 }
                             },
-                            "__group_by__st_name": {
+                            "group_by_st_name": {
                                 "terms": {
                                     "field": "st_name"
                                 },
