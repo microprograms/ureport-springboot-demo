@@ -1,0 +1,18 @@
+以 normal_pv_company_day_1 报表为例
+
+【ureport 编辑器】
+http://necloud.solway.cn/ureport/designer?_u=file:normal_pv_company_day_1.ureport.xml
+
+【ureport 配置文件】
+normal_pv_company_day_1.ureport.xml
+
+【数据源】
+使用 Spring Bean 数据源，Bean Id 为 UReportHisDataService
+
+【数据集 1】
+名称为 di，调用 queryPvCompanyDayReportInfos 方法
+
+【数据集 2】
+名称为 desd，调用 queryPvCompanyDayReportElecStationData 方法
+
+【Es 数据查询】
