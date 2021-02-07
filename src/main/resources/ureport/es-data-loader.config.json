@@ -3,7 +3,24 @@
         "ds1": {
             "datasets": {
                 "dataset1": {
-                    "path": "aggregations.group_by_company_name.buckets"
+                    "path": "aggregations.group_by_company_name.buckets[*]",
+                    "postprocess": [
+                        "cd aggregations.group_by_company_name.buckets[*]",
+                        "copy group_by_st_name.buckets[*].restrict_we.value restrict_we[*]",
+                        "copy group_by_st_name.buckets[*].pr.value pr[*]",
+                        "copy group_by_st_name.buckets[*].shade_we.value shade_we[*]",
+                        "copy group_by_st_name.buckets[*].rad_chk.value rad_chk.values[*]",
+                        "copy group_by_st_name.buckets[*].inst_kw.value inst_kw[*]",
+                        "copy group_by_st_name.buckets[*].other_we.value other_we[*]",
+                        "copy group_by_st_name.buckets[*].repair_we.value repair_we[*]",
+                        "copy group_by_st_name.buckets[*].we.value we[*]",
+                        "copy group_by_st_name.buckets[*].fail_we.value fail_we[*]",
+                        "copy group_by_st_name.buckets[*].clean_mark.value clean_mark[*]",
+                        "copy group_by_st_name.buckets[*].max_p.value max_p[*]",
+                        "copy group_by_st_name.buckets[*].dust_we.value dust_we[*]",
+                        "copy group_by_st_name.buckets[*].real_kwh.value real_kwh[*]",
+                        "copy group_by_st_name.buckets[*].real_hours.value real_hours[*]"
+                    ]
                 }
             },
             "url": "http://127.0.01:9200/sun_invbox_day/_search",

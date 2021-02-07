@@ -1,0 +1,140 @@
+{
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 65,
+            "relation": "eq"
+        },
+        "max_score": null,
+        "hits": []
+    },
+    "aggregations": {
+        "group_by_company_name": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+                {
+                    "key": "上海普洛斯",
+                    "doc_count": 65,
+                    "rad_chk": {
+                        "value": 0.47894332408905027
+                    },
+                    "real_kwh": {
+                        "value": 1170.0
+                    },
+                    "inst_kw": {
+                        "value": 5042.400000000001
+                    },
+                    "group_by_st_name": {
+                        "doc_count_error_upper_bound": 0,
+                        "sum_other_doc_count": 0,
+                        "buckets": [
+                            {
+                                "key": "宝山物流园",
+                                "doc_count": 39,
+                                "restrict_we": {
+                                    "value": 0.0
+                                },
+                                "pr": {
+                                    "value": 0.0
+                                },
+                                "shade_we": {
+                                    "value": 0.0
+                                },
+                                "rad_chk": {
+                                    "value": 0.36419999599456787
+                                },
+                                "inst_kw": {
+                                    "value": 3036.0
+                                },
+                                "other_we": {
+                                    "value": 1046.9955357860115
+                                },
+                                "repair_we": {
+                                    "value": 0.0
+                                },
+                                "we": {
+                                    "value": 1491.973819732666
+                                },
+                                "fail_we": {
+                                    "value": 0.0
+                                },
+                                "clean_mark": {
+                                    "value": 0.7625256816520228
+                                },
+                                "max_p": {
+                                    "value": 0.0
+                                },
+                                "dust_we": {
+                                    "value": 444.97828919488313
+                                },
+                                "real_kwh": {
+                                    "value": 0.0
+                                },
+                                "real_hours": {
+                                    "value": 0.0
+                                }
+                            },
+                            {
+                                "key": "园中路2MW",
+                                "doc_count": 26,
+                                "restrict_we": {
+                                    "value": 0.0
+                                },
+                                "pr": {
+                                    "value": 0.8961560793833888
+                                },
+                                "shade_we": {
+                                    "value": 7.086414599812067
+                                },
+                                "rad_chk": {
+                                    "value": 0.6510583162307739
+                                },
+                                "inst_kw": {
+                                    "value": 2006.4
+                                },
+                                "other_we": {
+                                    "value": 0.0
+                                },
+                                "repair_we": {
+                                    "value": 0.0
+                                },
+                                "we": {
+                                    "value": 298.602011680603
+                                },
+                                "fail_we": {
+                                    "value": 0.0
+                                },
+                                "clean_mark": {
+                                    "value": 0.6587418471681966
+                                },
+                                "max_p": {
+                                    "value": 388.20000553131104
+                                },
+                                "dust_we": {
+                                    "value": 291.51559868297306
+                                },
+                                "real_kwh": {
+                                    "value": 1170.0
+                                },
+                                "real_hours": {
+                                    "value": 0.5834498834498835
+                                }
+                            }
+                        ]
+                    },
+                    "real_hours": {
+                        "value": 0.23337995337995338
+                    }
+                }
+            ]
+        }
+    }
+}
