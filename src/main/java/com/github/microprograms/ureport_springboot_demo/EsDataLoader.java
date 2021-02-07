@@ -58,18 +58,6 @@ public class EsDataLoader {
         postprocessCmds.execute(responseJsonObject, responseJsonObject);
 
         return JsonUtils.getJsonArray(responseJsonObject, path);
-
-        // List<Map<String, String>> list = new ArrayList<>();
-        // for (int i = 0; i < jsonArray.size(); i++) {
-        // JSONObject x = jsonArray.getJSONObject(i);
-        // Map<String, String> map = new HashMap<>();
-        // for (String key : x.keySet()) {
-        // map.put(key, x.getString(key));
-        // }
-        // list.add(map);
-        // }
-
-        // return list;
     }
 
     public static String search(String url, String source) throws IOException {
