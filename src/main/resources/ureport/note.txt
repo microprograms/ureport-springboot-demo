@@ -7,7 +7,7 @@ http://necloud.solway.cn/ureport/designer?_u=file:normal_pv_company_day_1.urepor
 normal_pv_company_day_1.ureport.xml
 
 【数据源】
-使用 Spring Bean 数据源，Bean Id 为 UReportHisDataService
+使用 Spring Bean 数据源，Bean Id 为 UReportHisDataService，源码路径 solway-desert-service-parent/solway-desert-service-his/src/main/java/com/solway/desert/module/his/service/UReportHisDataService.java
 
 【数据集 1】
 名称为 di，调用 queryPvCompanyDayReportInfos 方法
@@ -15,4 +15,29 @@ normal_pv_company_day_1.ureport.xml
 【数据集 2】
 名称为 desd，调用 queryPvCompanyDayReportElecStationData 方法
 
-【Es 数据查询】
+【Es 数据查询相关源码】
+solway-desert-service-parent/solway-desert-service-his/src/main/java/com/solway/desert/module/his/service/QueryEsHisDataService.java
+solway-desert-service-parent/solway-desert-service-his/src/main/java/com/solway/desert/module/his/service/OpEsQueryService.java
+
+【Es 数据查询相关配置】
+实体类 solway-desert-bigdata-history/src/main/java/com/solway/desert/module/his/entity/OpEsQuery.java
+
+数据库配置表 op_es_query
+    编码：query_code
+    名称：name
+    地址：url
+    Es对象名：object_code
+    字段配置：source_config
+    分组配置：group_config
+    排序配置：order_config
+    参数配置：param_config
+    结果配置：result_config
+    查询类型：exec
+    同比环比：diffType 0:不进行对比 1:同比 3:同比环比(年,月查询有效)
+    每页数据量：page_size 默认值 page:10, 其他:1000
+    数据是否进位：carry 0否 1是 默认1
+    当地语言缩写：locale 'en_US' 'zh_CN' 空时默认'zh_CN'
+    顺序序号：weight
+
+【多级循环】
+使用多个数据源（多个实体的list列表），通过设置父格和过滤条件实现
