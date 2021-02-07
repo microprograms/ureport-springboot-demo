@@ -1,9 +1,15 @@
+# 导出mapping
 elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.mapping.json --type=mapping
 
+# 导出 上海普洛斯 的数据
 elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.data.json --type=data --searchBody="{\"query\":{\"bool\":{\"must\":[{\"range\":{\"dtime\":{\"gte\":\"2021-02-01\",\"lte\":\"2021-02-01\"}}},{\"term\":{\"companyid\":\"188\"}}]}}}"
 
+# 导出 苏州工业园区中鑫配售电有限公司 的数据
+elasticdump --input=http://60.12.10.11:9200/sun_invbox_day --output=c:/data/sun_invbox_day.data.json --type=data --searchBody="{\"query\":{\"bool\":{\"must\":[{\"range\":{\"dtime\":{\"gte\":\"2021-02-01\",\"lte\":\"2021-02-01\"}}},{\"term\":{\"companyid\":\"170\"}}]}}}"
 
 
+# 导入mapping
 elasticdump --input=/Users/xuzewei/Downloads/data/sun_invbox_day.mapping.json --output=http://127.0.0.1:9200/sun_invbox_day --type=mapping
 
+# 导入数据
 elasticdump --input=/Users/xuzewei/Downloads/data/sun_invbox_day.data.json --output=http://127.0.0.1:9200/sun_invbox_day --type=data
